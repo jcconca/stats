@@ -109,4 +109,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             completion(NSBackgroundActivityScheduler.Result.finished)
         }
     }
+    
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+      if #available(OSX 10.12.1, *) {
+        NSApplication.shared().isAutomaticCustomizeTouchBarMenuItemEnabled = true
+      }
+    }
 }
